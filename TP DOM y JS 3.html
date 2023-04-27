@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>TP</title> 
+</head> 
+<body> 
+    <table style="border: 1px solid"> 
+        <thead> 
+            <tr> 
+                <th>Header 1</th>
+                <th>Header 2</th> 
+            </tr> 
+        </thead> 
+        <tbody></tbody> 
+    </table> 
+    <br> 
+    <button onclick="insertRow()">Insert row</button>
+    <button onclick="deleteRow()">Delete row</button> 
+    <script>
+        var tbody = document.getElementsByTagName("tbody")[0];
+        var insertBtn = document.getElementsByTagName("button")[0];
+        var deleteBtn = document.getElementsByTagName("button")[1];
+
+        function insertRow() {
+            var newRow = tbody.insertRow();
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            cell1.innerHTML = "New row";
+            cell2.innerHTML = "New row";
+        }
+
+        function deleteRow() {
+            var rowCount = tbody.rows.length;
+            if (rowCount > 0) {
+                tbody.deleteRow(rowCount - 1);
+            }
+        }
+    </script>
+</body> 
+</html>
